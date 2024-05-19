@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    environment:
+        - FLASK_APP=${FLASK_APP}
+        - FLASK_RUN_HOST=${FLASK_RUN_HOST}
+        - DEV_MODE=${DEV_MODE}
+
+  redis:
+    image: "redis:alpine"
+    environment:
+        - DEV_MODE=${DEV_MODE}
