@@ -2,7 +2,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.10-alpine
 
-RUN apk update && apk add git make gcc musl-dev linux-headers curl
+RUN apk update && apk add git make gcc musl-dev linux-headers
 
 ADD --chmod=755 https://astral.sh/uv/install.sh /install.sh
 RUN /install.sh && rm /install.sh
